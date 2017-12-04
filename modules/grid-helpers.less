@@ -1,0 +1,56 @@
+
+@import url(typo/typography.less);
+@import url(layout.less);
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+
+
+
+// Vertical Grid
+.inner-wrap {
+    @gridWidth: 900px;
+
+    @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+    // @gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+    .grid(@gridWidth);
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
+
+    &.inner-wrap-header {
+        @gridWidth: 100%;
+        .grid(@gridWidth);
+        html.vgrid {
+            .showGrid(@gridWidth, @gridImage);
+        }
+    }
+}
+
+.route-grid {
+    @gridWidth: 900px;
+    @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+    // @gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+    .grid(@gridWidth);
+    .showGrid(@gridWidth, @gridImage);
+}
+
+
+// Horisontal Grid
+body {
+    html.hgrid & {
+        background-image: url(../img/horisontal-grid-24.png);
+    }
+}
+
+.route-typography {
+    .typographyHeadings();
+    .typographyTextElements();
+    .typographyCodeElements();
+    .typographyTableElements();
+    .typographyOtherElements();
+    background-image: url(../img/horisontal-grid-24.png);
+}
+
+

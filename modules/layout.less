@@ -1,0 +1,57 @@
+/**
+* Gridbaserad layout
+*/
+
+@import "grid-float.less";
+
+@magicNumber: 24px;
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+
+
+.flash-wrap {
+    img {
+        max-width: @columns;
+    }
+}
+
+.row {
+    .row();
+}
+
+// .outer-wrap-header,
+.outer-wrap-main,
+.footer-column-wrapper, {
+    margin-bottom: @magicNumber;
+}
+
+.footer-column-wrapper {
+    .clearfix();
+}
+
+.site-logo-text {
+    .column(6);
+}
+
+.navbar2 {
+    .column(18);
+}
+
+.main {
+    .column(20);
+    .push(2);
+}
+
+.footer-column {
+    .column(@columns / 3);
+}
+
+.site-footer {
+    .column(@columns);
+}
+
+.footer {
+    .column(@columns);
+}
