@@ -23,7 +23,7 @@ html {
 body {
     margin-left: auto;
     margin-right: auto;
-    max-width: 99%;
+    width: 80%;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -35,7 +35,7 @@ body {
 .outer-wrap-header,
 .site-header {
     height: 60px;
-    width: 99%;
+    width: 100%;
 }
 
 .site-logo-text,
@@ -94,9 +94,6 @@ body {
 .flash-wrap{
     img {
         .column(@columns);
-        // margin-top: 0px;
-        // margin-bottom: 0px;
-        // margin-left: 5px;
     }
 }
 
@@ -153,8 +150,8 @@ body {
 }
 
 .route-grid {
-    background-size: 99%;
-    max-width: 99%;
+    background-size: 80%;
+    max-width: 80%;
 }
 
 /** --------------------------------------------------------------
@@ -163,7 +160,7 @@ body {
 
 .after-main {
     margin: 10px;
-    width: 99%;
+    width: 100%;
     font-size: 12px;
 }
 
@@ -172,7 +169,7 @@ body {
  */
 
 .footer {
-    width: 99%;
+    width: 100%;
     margin-top: 1px;
     .footer-column-wrapper {
         border-top: 1px solid black;
@@ -187,7 +184,7 @@ body {
 /// vgrid
 
 .inner-wrap {
-    @gridWidth: 99%;
+    @gridWidth: 80%;
 
     @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
     // @gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
@@ -197,7 +194,7 @@ body {
     }
 
     &.inner-wrap-header {
-        @gridWidth: 99%;
+        @gridWidth: 80%;
         .grid(@gridWidth);
         html.vgrid {
             .showGrid(@gridWidth, @gridImage);
