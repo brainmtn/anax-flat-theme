@@ -8,8 +8,11 @@
  *  HTML
  */
 
- html {
-    background: linear-gradient(to bottom,#868f96,#596164)
+html {
+    background-image: url(../img/bgbild.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover; 
  }
 
 
@@ -20,6 +23,7 @@
 body {
     margin-left: auto;
     margin-right: auto;
+    max-width: 99%;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -31,7 +35,7 @@ body {
 .outer-wrap-header,
 .site-header {
     height: 60px;
-    width: 900px;
+    width: 99%;
 }
 
 .site-logo-text,
@@ -90,9 +94,9 @@ body {
 .flash-wrap{
     img {
         .column(@columns);
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 5px;
+        // margin-top: 0px;
+        // margin-bottom: 0px;
+        // margin-left: 5px;
     }
 }
 
@@ -102,8 +106,13 @@ body {
 */
 
 .wrap-all {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    box-shadow: 0px 5px 10px #888888;
+    background-color: #fff;
+    opacity: 0.7;
     color: #3e3e3e;
-    max-width: 900px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     p {
@@ -112,10 +121,6 @@ body {
     ul {
         font-size: 18px;
     }
-}
-
-.inner-wrap {
-    border: 2px solid black;
 }
 
 .main {
@@ -147,19 +152,18 @@ body {
     .push(1);
 }
 
-.figure {
-    border: 2px solid black;
+.route-grid {
+    background-size: 99%;
+    max-width: 99%;
 }
 
-.route-grid {
-    width: 100%;
-    background-size: 100%;
-}
 /** --------------------------------------------------------------
  *  Byline
  */
 
 .after-main {
+    margin: 10px;
+    width: 99%;
     font-size: 12px;
 }
 
@@ -168,12 +172,35 @@ body {
  */
 
 .footer {
-    width: 100%;
+    width: 99%;
     margin-top: 1px;
     .footer-column-wrapper {
+        border-top: 1px solid black;
         text-align: center;
     }
     .site-footer{
+        border-top: 1px solid black;
         text-align: center;
+    }
+}
+
+/// vgrid
+
+.inner-wrap {
+    @gridWidth: 99%;
+
+    @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+    // @gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+    .grid(@gridWidth);
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
+
+    &.inner-wrap-header {
+        @gridWidth: 99%;
+        .grid(@gridWidth);
+        html.vgrid {
+            .showGrid(@gridWidth, @gridImage);
+        }
     }
 }
